@@ -26,6 +26,8 @@ var app = http.createServer(function(request,response){
       topic.update_process(request, response);
     } else if(pathname === '/delete_process'){
       topic.delete_process(request, response);
+    } else if(pathname === '/search_result'){
+      topic.search_result(request, response, queryData.title);
     } else if(pathname === '/author'){
       author.list(response);
     } else if(pathname === '/author/create'){
@@ -38,6 +40,8 @@ var app = http.createServer(function(request,response){
       author.update_process(request, response);
     } else if(pathname === '/author/delete_process'){
       author.delete_process(request, response);
+    } else if(pathname === '/author/search_result'){
+      author.search_result(request, response, queryData.name);
     } else {
       response.writeHead(404);
       response.end('Not found');
