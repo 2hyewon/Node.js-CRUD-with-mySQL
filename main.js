@@ -21,6 +21,8 @@ var app = http.createServer(function(request,response){
         topic.home(request, response, limit, pathname, queryData.page, '');
       } else if(queryData.id === undefined){
         topic.home(request, response, limit, pathname, queryData.page, queryData.sort);
+      } else if(queryData.sort === undefined){
+        topic.page(request, response, queryData.page, queryData.id, limit, pathname, '');
       } else{
         topic.page(request, response, queryData.page, queryData.id, limit, pathname, queryData.sort);
       }
